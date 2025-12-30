@@ -65,6 +65,37 @@ git log
 2.  `git add .` (將變更加入暫存區)
 3.  `git commit -m "完成 xxx 功能"` (存檔)
 
+## 分支操作 (Branching)
+
+分支 (Branch) 讓您可以同時進行不同的開發工作，而不會互相干擾。例如：您可以在 `feature-gui` 分支開發介面，同時在 `main` 分支維持穩定的版本。
+
+### 1. 建立與切換分支
+
+```bash
+git checkout -b feature-new
+```
+*這行指令會建立一個名為 `feature-new` 的新分支，並直接切換過去。*
+
+### 2. 查看目前分支
+
+```bash
+git branch
+```
+*有 `*` 號的代表目前所在的分支。*
+
+### 3. 切換回主分支
+
+```bash
+git checkout main
+```
+
+### 4. 合併分支 (Merge)
+
+當您在 `feature-new` 完成開發後，可以將成果合併回主分支：
+
+1. 先切換回主分支：`git checkout main`
+2. 執行合併指令：`git merge feature-new`
+
 ## 什麼是 .gitignore?
 
 您可能會發現專案中有一個 `.gitignore` 檔案。這個檔案是用來告訴 Git **「不要」** 追蹤哪些檔案。
@@ -87,5 +118,27 @@ git remote add origin https://github.com/您的帳號/您的專案名稱.git
 git branch -M main
 git push -u origin main
 ```
+
+## 進階：下載與更新專案 (Clone & Pull)
+
+如果您想要下載別人的專案，或是更新已經下載的專案，請使用以下指令。
+
+### 1. 下載新專案 (Clone)
+
+當您想要將 GitHub 上的專案完整下載到自己的電腦時：
+
+```bash
+git clone https://github.com/帳號/專案名稱.git
+```
+*這會建立一個與專案同名的資料夾，裡面包含所有的程式碼與歷史紀錄。*
+
+### 2. 更新專案 (Pull)
+
+當專案在 GitHub 上有更新 (例如別人推送了新程式碼，或是您在另一台電腦上做了修改)，您需要將這些更新「拉」回目前的電腦：
+
+```bash
+git pull
+```
+*執行此指令前，請確保您目前的修改都已經 commit，否則可能會發生衝突。*
 
 祝您版本控制順利！
