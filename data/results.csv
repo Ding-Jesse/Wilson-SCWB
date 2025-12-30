@@ -1,0 +1,6 @@
+joint_id,sum_mc,sum_mb,ratio,is_safe,message
+J1,100,50,2.0,True,Strong Column Weak Beam Satisfied
+J2,60,60,1.0,False,WARNING: Weak Column Detected
+J3,150,100,1.5,True,Strong Column Weak Beam Satisfied
+J4,80,70,1.1428571428571428,False,WARNING: Weak Column Detected
+J5,200,150,1.3333333333333333,True,Strong Column Weak Beam Satisfied
